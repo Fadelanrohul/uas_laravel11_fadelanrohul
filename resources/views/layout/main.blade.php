@@ -57,8 +57,23 @@
                     </li>
 
                 <li class="nav-item">
-                <a class="nav-link {{ request()->segment('1') =='jadwal'  ? 'active' : '' }}" aria-current="page" href="">
-                <i class="fas fa-user"></i> Logout</a>
+                <a class="nav-link {{ request()->segment('1') =='buku'  ? 'active' : '' }}" aria-current="page" href="{{ route('buku.index') }}">
+                <i class="fas fa-user"></i> Buku</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link {{ request()->segment('1') =='penerbit'  ? 'active' : '' }}" aria-current="page" href="{{ route('penerbit.index') }}">
+                <i class="fas fa-user"></i> Penerbit</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link {{ request()->segment('1') =='anggota'  ? 'active' : '' }}" aria-current="page" href="{{ route('anggota.index') }}">
+                <i class="fas fa-user"></i> Anggota</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link {{ request()->segment('1') =='peminjam'  ? 'active' : '' }}" aria-current="page" href="{{ route('peminjam.index') }}">
+                <i class="fas fa-user"></i> Peminjam</a>
                 </li>
 
             </ul>

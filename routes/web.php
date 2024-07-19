@@ -1,8 +1,11 @@
 <?php
+use App\Http\Controllers\BukuAzmiController;
+use App\Http\Controllers\PenerbitAzmiController;
+use App\Http\Controllers\AnggotaAzmiController;
+use App\Http\Controllers\PeminjamAzmiController;
 
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\JurusanController;
-use App\Http\Controllers\GuruController;
 use App\Http\Controllers\HariController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KurikulumController;
@@ -31,26 +34,25 @@ Route::get('cetak_siswa', [SiswaController::class, 'cetak_siswa'])->name('cetak_
 Route::get('/jurusan', [JurusanController::class, 'index'])->name('jurusan.index');
 
 
-// Route::resource('guru', GuruController::class);
-Route::get('guru', [GuruController::class, 'index']);
-Route::post('guru', [GuruController::class, 'store']);
-Route::get('guru/{id}', [GuruController::class, 'show']);
-Route::put('guru/{id}', [GuruController::class, 'update']);
-Route::delete('guru/{id}', [GuruController::class, 'destroy']);
-
 //other way route
 Route::resource('pelajaran', PelajaranController::class);
 
 Route::resource('kurikulum', KurikulumController::class);
+
+Route::resource('buku', BukuAzmiController::class);
+Route::resource('penerbit', PenerbitAzmiController::class);
+Route::resource('anggota', AnggotaAzmiController::class);
+Route::resource('peminjam', PeminjamAzmiController::class);
+
+Route::resource('hari', HariController::class);
+
+
 
 Route::get('jadwal', [JadwalController::class, 'index'])->name('jadwal.index');
 
 Route::resource('perkiraan', PerkiraanController::class);
 Route::get('cetak_perkiraan', [PerkiraanController::class, 'cetak_perkiraan'])->name('cetak_perkiraan');
 
-
-
-Route::resource('hari', HariController::class);
 
 Route::resource('pengumuman', PengumumanController::class);
 
